@@ -68,9 +68,6 @@ def initcurses(curses):
 	curses.init_pair(3, curses.COLOR_GREEN, curses.COLOR_BLACK)
 	curses.init_pair(4, curses.COLOR_YELLOW, curses.COLOR_BLACK)
 	curses.init_pair(5, curses.COLOR_BLACK, curses.COLOR_WHITE)
-	curses.init_pair(6, curses.COLOR_BLACK, curses.COLOR_WHITE)
-	curses.init_pair(7, curses.COLOR_BLACK, curses.COLOR_WHITE)
-	curses.init_pair(8, curses.COLOR_BLACK, curses.COLOR_WHITE)
 
 def updateplaylist():
 
@@ -102,30 +99,30 @@ def updateplaylist():
 	stdscr.addstr(5,35,updated,curses.color_pair(1))
 	
 	line = 'Artist'
-	line = line.ljust(20,' ')+'  '
+	line = line.ljust(35,' ')+'  '
 	stdscr.addstr(7,0,line,curses.color_pair(5))
 	line = 'Song'
-	line = line.ljust(20,' ')+'  '
-	stdscr.addstr(line,curses.color_pair(6))
+	line = line.ljust(35,' ')+'  '
+	stdscr.addstr(line,curses.color_pair(5))
 	line = "Album"
-	line = line.ljust(20,' ')+'  '
-	stdscr.addstr(line,curses.color_pair(7))
-	line = "Label       "
-	stdscr.addstr(line,curses.color_pair(8))
+	line = line.ljust(35,' ')+'  '
+	stdscr.addstr(line,curses.color_pair(5))
+	line = "Label                         "
+	stdscr.addstr(line,curses.color_pair(5))
 	stdscr.addstr("\n")
 	
 	for x in range(15):
 		line = playlist[x][0] 
-		line = line[:20].ljust(20,' ') + '  '
+		line = line[:35].ljust(35,' ') + '  '
 		stdscr.addstr(line ,curses.color_pair(1))
 		line = playlist[x][1]
-		line = line[:20].ljust(20,' ') + '  '
+		line = line[:35].ljust(35,' ') + '  '
 	 	stdscr.addstr(line,curses.color_pair(2))
 		line = playlist[x][2]
-		line = line[:20].ljust(20,' ') + '  '
+		line = line[:35].ljust(35,' ') + '  '
 		stdscr.addstr(line ,curses.color_pair(3))
 		line = playlist[x][3]
-		line = line[:12]
+		line = line[:30]
 	 	stdscr.addstr(line,curses.color_pair(4) )
 	 	#stdscr.addstr(line[:20] +"\t",curses.color_pair(1))
 		stdscr.addstr("\n")
